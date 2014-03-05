@@ -1,0 +1,38 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ output extension=".cs" #>
+namespace Patterns.Containers
+{
+<#for (int i = 2; i < 9; i++){#>
+	<# var typeSig = string.Join(", ", Enumerable.Range(1, i).Select(n => "T" + n)); #>
+public sealed class Either<<#=typeSig#>>
+	{
+		<#for (int j = 1; j <=i; j++){#>
+public T<#=j#> Value<#=j#> { get; private set; }
+		<#}#>
+
+		<#for (int j = 1; j <=i; j++){#>
+public Either(T<#=j#> value)
+        {
+            Value<#=j#> = value;
+        }
+		<#}#>
+
+		<#for (int j = 1; j <=i; j++){#>
+public static implicit operator T<#=j#>(Either<<#=typeSig#>> value)
+        {
+            return value.Value<#=j#>;
+        }
+		<#}#>
+
+		<#for (int j = 1; j <=i; j++){#>
+public static implicit operator Either<<#=typeSig#>>(T<#=j#> value)
+        {
+            return new Either<<#=typeSig#>>(value);
+        }
+		<#}#>
+}
+
+<#}#>
+}
