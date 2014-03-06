@@ -3,3 +3,4 @@ MatchTest/bin/
 MatchTest/obj/
 Patterns/obj/
 Patterns/bin/
+*.suo
