@@ -39,19 +39,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Containers\Either.cs">
+    <Compile Include="Containers\Union.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Either.tt</DependentUpon>
+      <DependentUpon>Union.tt</DependentUpon>
     </Compile>
     <Compile Include="Containers\Pair.cs" />
     <Compile Include="Match.cs" />
+    <Compile Include="MatcherOverloads.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MatcherOverloads.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Containers\Either.tt">
+    <None Include="Containers\Union.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Either.cs</LastGenOutput>
+      <LastGenOutput>Union.cs</LastGenOutput>
+    </None>
+    <None Include="MatcherOverloads.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MatcherOverloads.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -4,32 +4,32 @@
 <#@ output extension=".cs" #>
 namespace Patterns.Containers
 {
-<#for (int i = 2; i < 9; i++){#>
+<#for (int i = 2; i < 16; i++){#>
 	<# var typeSig = string.Join(", ", Enumerable.Range(1, i).Select(n => "T" + n)); #>
-public sealed class Either<<#=typeSig#>>
+public sealed class Union<<#=typeSig#>>
 	{
 		<#for (int j = 1; j <=i; j++){#>
 public T<#=j#> Value<#=j#> { get; private set; }
 		<#}#>
 
 		<#for (int j = 1; j <=i; j++){#>
-public Either(T<#=j#> value)
+public Union(T<#=j#> value)
         {
             Value<#=j#> = value;
         }
 		<#}#>
 
 		<#for (int j = 1; j <=i; j++){#>
-public static implicit operator T<#=j#>(Either<<#=typeSig#>> value)
+public static implicit operator T<#=j#>(Union<<#=typeSig#>> value)
         {
             return value.Value<#=j#>;
         }
 		<#}#>
 
 		<#for (int j = 1; j <=i; j++){#>
-public static implicit operator Either<<#=typeSig#>>(T<#=j#> value)
+public static implicit operator Union<<#=typeSig#>>(T<#=j#> value)
         {
-            return new Either<<#=typeSig#>>(value);
+            return new Union<<#=typeSig#>>(value);
         }
 		<#}#>
 }
