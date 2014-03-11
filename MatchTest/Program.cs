@@ -15,7 +15,7 @@ namespace MatchTest
                 {s => true, s => 0}
             };
 
-            int res = eiMatch("100");
+            var res = (int)eiMatch("100");
 
             Console.WriteLine(res);
             Console.ReadKey();

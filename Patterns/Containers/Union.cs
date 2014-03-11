@@ -14,11 +14,11 @@
             Value2 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2> value)
+		public static explicit operator T1(Union<T1, T2> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2> value)
+		public static explicit operator T2(Union<T1, T2> value)
         {
             return value.Value2;
         }
@@ -52,15 +52,15 @@
             Value3 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3> value)
+		public static explicit operator T1(Union<T1, T2, T3> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3> value)
+		public static explicit operator T2(Union<T1, T2, T3> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3> value)
+		public static explicit operator T3(Union<T1, T2, T3> value)
         {
             return value.Value3;
         }
@@ -103,19 +103,19 @@
             Value4 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4> value)
         {
             return value.Value4;
         }
@@ -167,23 +167,23 @@
             Value5 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5> value)
         {
             return value.Value5;
         }
@@ -244,27 +244,27 @@
             Value6 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5, T6> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5, T6> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5, T6> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5, T6> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5, T6> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6> value)
         {
             return value.Value5;
         }
-		public static implicit operator T6(Union<T1, T2, T3, T4, T5, T6> value)
+		public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6> value)
         {
             return value.Value6;
         }
@@ -334,31 +334,31 @@
             Value7 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7> value)
         {
             return value.Value5;
         }
-		public static implicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7> value)
+		public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7> value)
         {
             return value.Value6;
         }
-		public static implicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7> value)
+		public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7> value)
         {
             return value.Value7;
         }
@@ -437,35 +437,35 @@
             Value8 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
         {
             return value.Value5;
         }
-		public static implicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
+		public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
         {
             return value.Value6;
         }
-		public static implicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
+		public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
         {
             return value.Value7;
         }
-		public static implicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
+		public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
         {
             return value.Value8;
         }
@@ -553,39 +553,39 @@
             Value9 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
         {
             return value.Value5;
         }
-		public static implicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
+		public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
         {
             return value.Value6;
         }
-		public static implicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
+		public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
         {
             return value.Value7;
         }
-		public static implicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
+		public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
         {
             return value.Value8;
         }
-		public static implicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
+		public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
         {
             return value.Value9;
         }
@@ -682,43 +682,43 @@
             Value10 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
         {
             return value.Value5;
         }
-		public static implicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
+		public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
         {
             return value.Value6;
         }
-		public static implicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
+		public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
         {
             return value.Value7;
         }
-		public static implicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
+		public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
         {
             return value.Value8;
         }
-		public static implicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
+		public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
         {
             return value.Value9;
         }
-		public static implicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
+		public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
         {
             return value.Value10;
         }
@@ -824,47 +824,47 @@
             Value11 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value5;
         }
-		public static implicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value6;
         }
-		public static implicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value7;
         }
-		public static implicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value8;
         }
-		public static implicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value9;
         }
-		public static implicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value10;
         }
-		public static implicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
+		public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
         {
             return value.Value11;
         }
@@ -979,51 +979,51 @@
             Value12 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value5;
         }
-		public static implicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value6;
         }
-		public static implicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value7;
         }
-		public static implicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value8;
         }
-		public static implicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value9;
         }
-		public static implicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value10;
         }
-		public static implicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value11;
         }
-		public static implicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
+		public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
         {
             return value.Value12;
         }
@@ -1147,55 +1147,55 @@
             Value13 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value5;
         }
-		public static implicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value6;
         }
-		public static implicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value7;
         }
-		public static implicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value8;
         }
-		public static implicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value9;
         }
-		public static implicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value10;
         }
-		public static implicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value11;
         }
-		public static implicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value12;
         }
-		public static implicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
+		public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
         {
             return value.Value13;
         }
@@ -1328,59 +1328,59 @@
             Value14 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value5;
         }
-		public static implicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value6;
         }
-		public static implicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value7;
         }
-		public static implicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value8;
         }
-		public static implicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value9;
         }
-		public static implicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value10;
         }
-		public static implicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value11;
         }
-		public static implicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value12;
         }
-		public static implicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value13;
         }
-		public static implicit operator T14(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
+		public static explicit operator T14(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
         {
             return value.Value14;
         }
@@ -1522,63 +1522,63 @@
             Value15 = value;
         }
 		
-		public static implicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value1;
         }
-		public static implicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T2(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value2;
         }
-		public static implicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T3(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value3;
         }
-		public static implicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T4(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value4;
         }
-		public static implicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T5(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value5;
         }
-		public static implicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T6(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value6;
         }
-		public static implicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T7(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value7;
         }
-		public static implicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T8(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value8;
         }
-		public static implicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T9(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value9;
         }
-		public static implicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T10(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value10;
         }
-		public static implicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T11(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value11;
         }
-		public static implicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T12(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value12;
         }
-		public static implicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T13(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value13;
         }
-		public static implicit operator T14(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T14(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value14;
         }
-		public static implicit operator T15(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
+		public static explicit operator T15(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
         {
             return value.Value15;
         }

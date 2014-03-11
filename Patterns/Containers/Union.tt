@@ -20,7 +20,7 @@ public Union(T<#=j#> value)
 		<#}#>
 
 		<#for (int j = 1; j <=i; j++){#>
-public static implicit operator T<#=j#>(Union<<#=typeSig#>> value)
+public static explicit operator T<#=j#>(Union<<#=typeSig#>> value)
         {
             return value.Value<#=j#>;
         }
