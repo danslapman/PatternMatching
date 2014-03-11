@@ -40,9 +40,6 @@ Union type matching:
 --------------------
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var len1 = match2(null); // 0
-var len2 = match2("abc"); // 3
-
 Func<string, Union<int, double>> match = new Matcher<string, int, double>
 {
     {s => { int nih; return int.TryParse(s, out nih); }, s => int.Parse(s)},
