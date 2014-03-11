@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Containers\OptionType.cs" />
     <Compile Include="Containers\Union.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
