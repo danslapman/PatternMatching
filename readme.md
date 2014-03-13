@@ -49,8 +49,8 @@ Func<string, Union<int, double>> match = new Matcher<string, int, double>
 
 Action<Union<int, double>> proc = new Matcher<Union<int, double>>
 {
-    {u => u.Value1 != default(int), u => Console.WriteLine(u.Value1)},
-    {u => u.Value2 != default(double), u => Console.WriteLine(u.Value2)},
+    {u => u.Value1 != default(int), u => Console.WriteLine((int)u)}, // or u.Value1
+    {u => u.Value2 != default(double), u => Console.WriteLine((double)u)}, // or u.Value2
     {u => true, u => Console.WriteLine("Empty union")}
 };
 

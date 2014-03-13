@@ -38,8 +38,8 @@ namespace MatchTest
 
             Action<Union<int, double>> proc = new Matcher<Union<int, double>>
             {
-                {u => u.Value1 != default(int), u => Console.WriteLine(u.Value1)},
-                {u => u.Value2 != default(double), u => Console.WriteLine(u.Value2)},
+                {u => u.Value1 != default(int), u => Console.WriteLine((int)u)},
+                {u => u.Value2 != default(double), u => Console.WriteLine((double)u)},
                 {u => true, u => Console.WriteLine("Empty union")}
             };
 
