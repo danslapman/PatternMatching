@@ -8,7 +8,7 @@ namespace MatchTest
     {
         static void Main(string[] args)
         {
-            Action<string> match = new Matcher<string>
+            Action<string> match = new ExprMatcher<string>
             {
                 {s => s.Length == 1, s => Console.WriteLine("1")},
                 {s => s.Length == 2, s => Console.WriteLine("2")},
@@ -50,7 +50,7 @@ namespace MatchTest
             string s1 = "Hello";
             string s2 = null;
 
-            Action<Option<string>> match4 = new Matcher<Option<string>>
+            Action<Option<string>> match4 = new ExprMatcher<Option<string>>
             {
                 {s => s is None, s => Console.WriteLine("None")},
                 {s => s is Some, s => Console.WriteLine((string) s)}
