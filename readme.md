@@ -1,7 +1,23 @@
 C# Pattern Matching
 ===================
 
-This is a try to implement pattern matching in C# as-idiomatic-as-possible. The idea was to avoid fluent matcher building and to provide a simple and clear syntax.
+This is a try to implement pattern matching in C# as-idiomatic-as-possible. The
+idea was to avoid fluent matcher building and to provide a simple and clear
+syntax.
+
+New in 1.1:
+-----------
+
+Now, Patterns library comes with ExpressionTree-based matcher for ultimate
+perfomance! Simply Replace new Matcher\<...\>{...} with new
+ExprMatcher\<...\>{...} to use new implementation. ExprMatcher constructs true
+lambda-function from the cases instead of foreach-looping. Note, that due to
+expression tree limitations not every lambda function can be converted to
+expression (see [lambda expression with statement body][1])
+
+[1]: <http://stackoverflow.com/questions/5179341/a-lambda-expression-with-a-statement-body-cannot-be-converted-to-an-expression>
+
+
 
 Usage
 =====
