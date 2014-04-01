@@ -33,6 +33,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.0.30\lib\portable-net45+win8+wp8\System.Collections.Immutable.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
@@ -43,12 +47,14 @@
       <DependentUpon>Union.tt</DependentUpon>
     </Compile>
     <Compile Include="Containers\Pair.cs" />
+    <Compile Include="ExprMatch.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="MatcherOverloads.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MatcherOverloads.tt</DependentUpon>
     </Compile>
+    <Compile Include="MatchException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +66,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MatcherOverloads.cs</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

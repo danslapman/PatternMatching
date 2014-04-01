@@ -20,9 +20,9 @@ namespace MatchTest
             match("aaa"); // Many
 
 
-            Func<string, int> match2 = new Matcher<string, int>
+            Func<string, int> match2 = new ExprMatcher<string, int>
             {
-                {string.IsNullOrEmpty, s => 0},
+                {s => string.IsNullOrEmpty(s), s => 0},
                 {s => true, s => s.Length}
             };
 

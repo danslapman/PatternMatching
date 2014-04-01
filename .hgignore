@@ -4,3 +4,5 @@ MatchTest/obj/
 Patterns/obj/
 Patterns/bin/
 *.suo
+packages/
+*.orig
