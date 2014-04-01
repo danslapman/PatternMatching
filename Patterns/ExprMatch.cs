@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Immutable;
+using System.Linq;
 using System.Linq.Expressions;
 using Patterns.Containers;
 
@@ -15,16 +15,16 @@ namespace Patterns
         {
             get { return _matcher ?? (_matcher = CompileMatcher()); }
         }
-        private ImmutableList<Pair<Expression<Predicate<T>>, Expression<Action<T>>>> _caseList = ImmutableList.Create<Pair<Expression<Predicate<T>>, Expression<Action<T>>>>();
+        private readonly List<Pair<Expression<Predicate<T>>, Expression<Action<T>>>> _caseList = new List<Pair<Expression<Predicate<T>>, Expression<Action<T>>>>();
 
         public void Add(Expression<Predicate<T>> predicate, Expression<Action<T>> function)
         {
-            _caseList = _caseList.Add(new Pair<Expression<Predicate<T>>, Expression<Action<T>>>(predicate, function));
+            _caseList.Add(new Pair<Expression<Predicate<T>>, Expression<Action<T>>>(predicate, function));
         }
 
         private Action<T> CompileMatcher()
         {
-            var reverted = _caseList.Reverse();
+            var reverted = Enumerable.Reverse(_caseList).ToList();
 
             var arg = Expression.Parameter(typeof(T));
             var retVal = Expression.Label();
@@ -77,16 +77,16 @@ namespace Patterns
         {
             get { return _matcher ?? (_matcher = CompileMatcher()); }
         } 
-        private ImmutableList<Pair<Expression<Predicate<TIn>>, Expression<Func<TIn, TOut>>>> _caseList = ImmutableList.Create<Pair<Expression<Predicate<TIn>>, Expression<Func<TIn, TOut>>>>();
+        private readonly List<Pair<Expression<Predicate<TIn>>, Expression<Func<TIn, TOut>>>> _caseList = new List<Pair<Expression<Predicate<TIn>>, Expression<Func<TIn, TOut>>>>();
 
         public void Add(Expression<Predicate<TIn>> predicate, Expression<Func<TIn, TOut>> function)
         {
-            _caseList = _caseList.Add(new Pair<Expression<Predicate<TIn>>, Expression<Func<TIn, TOut>>>(predicate, function));
+            _caseList.Add(new Pair<Expression<Predicate<TIn>>, Expression<Func<TIn, TOut>>>(predicate, function));
         }
 
         private Func<TIn, TOut> CompileMatcher()
         {
-            var reverted = _caseList.Reverse();
+            var reverted = Enumerable.Reverse(_caseList).ToList();
 
             var arg = Expression.Parameter(typeof(TIn));
             var retVal = Expression.Label(typeof(TOut));
