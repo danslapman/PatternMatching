@@ -48,6 +48,11 @@
     </Compile>
     <Compile Include="Containers\Pair.cs" />
     <Compile Include="ExprMatch.cs" />
+    <Compile Include="ExprMatcherOverloads.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExprMatcherOverloads.tt</DependentUpon>
+    </Compile>
     <Compile Include="Match.cs" />
     <Compile Include="MatcherOverloads.cs">
       <AutoGen>True</AutoGen>
@@ -61,6 +66,10 @@
     <None Include="Containers\Union.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Union.cs</LastGenOutput>
+    </None>
+    <None Include="ExprMatcherOverloads.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ExprMatcherOverloads.cs</LastGenOutput>
     </None>
     <None Include="MatcherOverloads.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
