@@ -8,6 +8,7 @@ namespace Patterns.Containers
 	<# var typeSig = string.Join(", ", Enumerable.Range(1, i).Select(n => "T" + n)); #>
 public sealed class Union<<#=typeSig#>>
 	{
+		public object Value { get; private set; }
 		<#for (int j = 1; j <=i; j++){#>
 public T<#=j#> Value<#=j#> { get; private set; }
 		<#}#>
@@ -16,6 +17,7 @@ public T<#=j#> Value<#=j#> { get; private set; }
 public Union(T<#=j#> value)
         {
             Value<#=j#> = value;
+			Value = value;
         }
 		<#}#>
 

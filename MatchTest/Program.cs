@@ -59,7 +59,19 @@ namespace MatchTest
             match4(s1); // Hello
             match4(s2); // None
 
+            Action<Union<int?, decimal?>> match5 = new ExprMatcher<Union<int?, decimal?>>
+            {
+                {s => s.Value is int?, _ => Console.WriteLine("int")},
+                {s => s.Value is decimal?, _ => Console.WriteLine("decimal")},
+                {_ => true, _ => Console.WriteLine("empty")}
+            };
+
+            match5(42);
+            match5(42m);
+            match5((int?)null);
+
             Console.ReadKey();
         }
     }
 }
+

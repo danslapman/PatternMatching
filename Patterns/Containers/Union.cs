@@ -2,16 +2,19 @@
 {
 	public sealed class Union<T1, T2>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2> value)
@@ -35,6 +38,7 @@
 
 	public sealed class Union<T1, T2, T3>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -42,14 +46,17 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3> value)
@@ -81,6 +88,7 @@
 
 	public sealed class Union<T1, T2, T3, T4>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -89,18 +97,22 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4> value)
@@ -140,6 +152,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -149,22 +162,27 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5> value)
@@ -212,6 +230,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5, T6>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -222,26 +241,32 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		public Union(T6 value)
         {
             Value6 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6> value)
@@ -297,6 +322,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5, T6, T7>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -308,30 +334,37 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		public Union(T6 value)
         {
             Value6 = value;
+			Value = value;
         }
 		public Union(T7 value)
         {
             Value7 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7> value)
@@ -395,6 +428,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5, T6, T7, T8>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -407,34 +441,42 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		public Union(T6 value)
         {
             Value6 = value;
+			Value = value;
         }
 		public Union(T7 value)
         {
             Value7 = value;
+			Value = value;
         }
 		public Union(T8 value)
         {
             Value8 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8> value)
@@ -506,6 +548,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -519,38 +562,47 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		public Union(T6 value)
         {
             Value6 = value;
+			Value = value;
         }
 		public Union(T7 value)
         {
             Value7 = value;
+			Value = value;
         }
 		public Union(T8 value)
         {
             Value8 = value;
+			Value = value;
         }
 		public Union(T9 value)
         {
             Value9 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9> value)
@@ -630,6 +682,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -644,42 +697,52 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		public Union(T6 value)
         {
             Value6 = value;
+			Value = value;
         }
 		public Union(T7 value)
         {
             Value7 = value;
+			Value = value;
         }
 		public Union(T8 value)
         {
             Value8 = value;
+			Value = value;
         }
 		public Union(T9 value)
         {
             Value9 = value;
+			Value = value;
         }
 		public Union(T10 value)
         {
             Value10 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> value)
@@ -767,6 +830,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -782,46 +846,57 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		public Union(T6 value)
         {
             Value6 = value;
+			Value = value;
         }
 		public Union(T7 value)
         {
             Value7 = value;
+			Value = value;
         }
 		public Union(T8 value)
         {
             Value8 = value;
+			Value = value;
         }
 		public Union(T9 value)
         {
             Value9 = value;
+			Value = value;
         }
 		public Union(T10 value)
         {
             Value10 = value;
+			Value = value;
         }
 		public Union(T11 value)
         {
             Value11 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value)
@@ -917,6 +992,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -933,50 +1009,62 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		public Union(T6 value)
         {
             Value6 = value;
+			Value = value;
         }
 		public Union(T7 value)
         {
             Value7 = value;
+			Value = value;
         }
 		public Union(T8 value)
         {
             Value8 = value;
+			Value = value;
         }
 		public Union(T9 value)
         {
             Value9 = value;
+			Value = value;
         }
 		public Union(T10 value)
         {
             Value10 = value;
+			Value = value;
         }
 		public Union(T11 value)
         {
             Value11 = value;
+			Value = value;
         }
 		public Union(T12 value)
         {
             Value12 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value)
@@ -1080,6 +1168,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -1097,54 +1186,67 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		public Union(T6 value)
         {
             Value6 = value;
+			Value = value;
         }
 		public Union(T7 value)
         {
             Value7 = value;
+			Value = value;
         }
 		public Union(T8 value)
         {
             Value8 = value;
+			Value = value;
         }
 		public Union(T9 value)
         {
             Value9 = value;
+			Value = value;
         }
 		public Union(T10 value)
         {
             Value10 = value;
+			Value = value;
         }
 		public Union(T11 value)
         {
             Value11 = value;
+			Value = value;
         }
 		public Union(T12 value)
         {
             Value12 = value;
+			Value = value;
         }
 		public Union(T13 value)
         {
             Value13 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> value)
@@ -1256,6 +1358,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -1274,58 +1377,72 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		public Union(T6 value)
         {
             Value6 = value;
+			Value = value;
         }
 		public Union(T7 value)
         {
             Value7 = value;
+			Value = value;
         }
 		public Union(T8 value)
         {
             Value8 = value;
+			Value = value;
         }
 		public Union(T9 value)
         {
             Value9 = value;
+			Value = value;
         }
 		public Union(T10 value)
         {
             Value10 = value;
+			Value = value;
         }
 		public Union(T11 value)
         {
             Value11 = value;
+			Value = value;
         }
 		public Union(T12 value)
         {
             Value12 = value;
+			Value = value;
         }
 		public Union(T13 value)
         {
             Value13 = value;
+			Value = value;
         }
 		public Union(T14 value)
         {
             Value14 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> value)
@@ -1445,6 +1562,7 @@
 
 	public sealed class Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>
 	{
+		public object Value { get; private set; }
 		public T1 Value1 { get; private set; }
 		public T2 Value2 { get; private set; }
 		public T3 Value3 { get; private set; }
@@ -1464,62 +1582,77 @@
 		public Union(T1 value)
         {
             Value1 = value;
+			Value = value;
         }
 		public Union(T2 value)
         {
             Value2 = value;
+			Value = value;
         }
 		public Union(T3 value)
         {
             Value3 = value;
+			Value = value;
         }
 		public Union(T4 value)
         {
             Value4 = value;
+			Value = value;
         }
 		public Union(T5 value)
         {
             Value5 = value;
+			Value = value;
         }
 		public Union(T6 value)
         {
             Value6 = value;
+			Value = value;
         }
 		public Union(T7 value)
         {
             Value7 = value;
+			Value = value;
         }
 		public Union(T8 value)
         {
             Value8 = value;
+			Value = value;
         }
 		public Union(T9 value)
         {
             Value9 = value;
+			Value = value;
         }
 		public Union(T10 value)
         {
             Value10 = value;
+			Value = value;
         }
 		public Union(T11 value)
         {
             Value11 = value;
+			Value = value;
         }
 		public Union(T12 value)
         {
             Value12 = value;
+			Value = value;
         }
 		public Union(T13 value)
         {
             Value13 = value;
+			Value = value;
         }
 		public Union(T14 value)
         {
             Value14 = value;
+			Value = value;
         }
 		public Union(T15 value)
         {
             Value15 = value;
+			Value = value;
         }
 		
 		public static explicit operator T1(Union<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> value)
