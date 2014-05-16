@@ -46,6 +46,11 @@ namespace Patterns
         {
             return GetEnumerator();
         }
+
+        public Action<T> ToAction()
+        {
+            return Match;
+        }
     }
 
     public class Matcher<TIn, TOut> : IEnumerable<Pair<Predicate<TIn>, Func<TIn, TOut>>>
@@ -85,6 +90,11 @@ namespace Patterns
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public Func<TIn, TOut> ToFunc()
+        {
+            return Match;
         }
     }
 }

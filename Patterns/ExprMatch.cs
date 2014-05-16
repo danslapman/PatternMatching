@@ -67,6 +67,11 @@ namespace Patterns
         {
             return GetEnumerator();
         }
+
+        public Action<T> ToAction()
+        {
+            return Match;
+        }
     }
 
     public class ExprMatcher<TIn, TOut> : IEnumerable<Pair<Expression<Predicate<TIn>>, Expression<Func<TIn, TOut>>>>
@@ -128,6 +133,11 @@ namespace Patterns
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public Func<TIn, TOut> ToFunc()
+        {
+            return Match;
         }
     }
 }
