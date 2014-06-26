@@ -8,28 +8,12 @@ namespace Patterns
 {
     public class Matcher <TIn, TOut> : IEnumerable<TOut>
     {
-        private readonly List<ConditionalExpression> _caseExpressionsList = new List<ConditionalExpression>();
-        private IEnumerable<BlockExpression> MatchErrorExpression
-        {
-            get
-            {
-                yield return Expression.Block(
-                    Expression.Throw(
-                        Expression.Constant(new MatchException("Provided value was not matched with any case"))),
-                    Expression.Label(RetPoint, Expression.Constant(default(TOut)))
-                    );
-            }
-        } 
+        private readonly List<BlockExpression> _caseExpressionsList = new List<BlockExpression>();
 
         private ParameterExpression _parameter;
         private ParameterExpression Parameter
         {
-            get { return _parameter ?? (_parameter = Expression.Parameter(typeof (TIn))); }
-        }
-
-        private IEnumerable<ParameterExpression> _parameterExpressions
-        {
-            get { yield return Parameter; }
+            get { return _parameter ?? (_parameter = Expression.Parameter(typeof (TIn), "inputValue")); }
         }
 
         private LabelTarget _retPoint;
@@ -41,13 +25,15 @@ namespace Patterns
 
         public void Add<TCtx>(Expression<Func<TIn, TCtx>> binder, Expression<Func<TCtx, TOut>> processor)
         {
-            Expression<Func<TCtx, bool>> nullCheck = o => o != null;
-            var binderRes = Expression.Invoke(binder, Parameter);
-            var caseExpr = Expression.IfThen(
-                Expression.Invoke(nullCheck, binderRes),
-                Expression.Return(RetPoint, Expression.Invoke(processor, binderRes))
-                );
-
+            var bindResult = Expression.Variable(typeof (TCtx), "binded");
+            var caseExpr = Expression.Block(
+                //typeof(TOut),
+                new []{bindResult},
+                Expression.Assign(bindResult, Expression.Invoke(binder, Parameter)),
+                Expression.IfThen(
+                    Expression.NotEqual(Expression.Convert(bindResult, typeof(object)), Expression.Constant(null)),
+                    Expression.Return(RetPoint, Expression.Invoke(processor, bindResult))
+                ));
             _caseExpressionsList.Add(caseExpr);
         }
 
@@ -55,13 +41,12 @@ namespace Patterns
         {
             var finalExpressions = new Expression[]
             {
-                Expression.Throw(
-                    Expression.Constant(new MatchException("Provided value was not matched with any case"))),
-                Expression.Label(RetPoint, Expression.Constant(default(TOut)))
+                Expression.Throw(Expression.Constant(new MatchException("Provided value was not matched with any case"))),
+                Expression.Label(RetPoint, Expression.Default(typeof(TOut)))
             };
 
-            var matcherExpression = Expression.Block(
-                    typeof(TOut), _caseExpressionsList.Concat(finalExpressions)
+            var matcherExpression = Expression.Block(typeof(TOut),
+                    new[] { Parameter }, _caseExpressionsList.Concat(finalExpressions)
                 );
 
             return Expression.Lambda<Func<TIn, TOut>>(matcherExpression, Parameter).Compile();

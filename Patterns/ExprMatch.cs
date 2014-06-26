@@ -97,7 +97,7 @@ namespace Patterns
             var retVal = Expression.Label(typeof(TOut));
             var matcher = Expression.Block(
                         Expression.Throw(Expression.Constant(new MatchException("Provided value was not matched with any case"))),
-                        Expression.Label(retVal, Expression.Constant(default(TOut)))
+                        Expression.Label(retVal, Expression.Default(typeof(TOut)))
                     );
             
             foreach (var pair in reverted)
@@ -108,7 +108,7 @@ namespace Patterns
 
                 matcher = Expression.Block(
                     Expression.IfThenElse(condition, action, Expression.Return(retVal, matcher)),
-                    Expression.Label(retVal, Expression.Constant(default(TOut)))
+                    Expression.Label(retVal, Expression.Default(typeof(TOut)))
                     );
             }
 
