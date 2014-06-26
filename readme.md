@@ -14,8 +14,8 @@ New in 1.1:
 -----------
 
 Now, Patterns library comes with ExpressionTree-based matcher for ultimate
-perfomance! Simply Replace new Matcher\<...\>{...} with new
-ExprMatcher\<...\>{...} to use new implementation. ExprMatcher constructs true
+perfomance! Simply Replace new Matcher<...\>{...} with new
+ExprMatcher<...\>{...} to use new implementation. ExprMatcher constructs true
 lambda-function from the cases instead of foreach-looping. Note, that due to
 expression tree limitations not every lambda function can be converted to
 expression (see [lambda expression with statement body][1])

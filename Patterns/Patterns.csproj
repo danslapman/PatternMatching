@@ -50,12 +50,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ExprMatcherOverloads.tt</DependentUpon>
     </Compile>
-    <Compile Include="Match.cs" />
-    <Compile Include="MatcherOverloads.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MatcherOverloads.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Matcher.cs" />
     <Compile Include="MatchException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,10 +62,6 @@
     <None Include="ExprMatcherOverloads.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ExprMatcherOverloads.cs</LastGenOutput>
-    </None>
-    <None Include="MatcherOverloads.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MatcherOverloads.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
