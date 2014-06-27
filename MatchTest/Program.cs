@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Text;
 using Patterns;
+using Patterns.Containers;
 
 namespace MatchTest
 {
@@ -8,19 +8,14 @@ namespace MatchTest
     {
         static void Main(string[] args)
         {
-            
-            var matcher = new Matcher<object, string>
+            var match = new Matcher<Option<int>, int?>
             {
-                {s => s as string, s => s},
-                {s => s as StringBuilder, s => s.ToString()},
-                {_ => true, (bool _) => "yiff"}
-            };
-
-            var m = matcher.ToFunc();
+                 {i => i is None, (Option<int> _) => null},
+                {i => i as Some<int>, i => i.Value}
+            }.ToFunc();
             
-            Console.WriteLine(m(new StringBuilder("peka")));
-            Console.WriteLine(m(123));
-            Console.WriteLine(m("yoba"));
+            Console.WriteLine(match(new None<int>()));
+            Console.WriteLine(match(10));
             Console.ReadKey();
         }
     }

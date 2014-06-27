@@ -143,8 +143,7 @@ namespace Patterns
                 Expression.Label(RetPoint, Expression.Default(typeof(TOut)))
             };
 
-            var matcherExpression = Expression.Block(_caseExpressionsList.Concat(finalExpressions)
-                );
+            var matcherExpression = Expression.Block(_caseExpressionsList.Concat(finalExpressions));
 
             return Expression.Lambda<Func<TIn, TOut>>(matcherExpression, Parameter).Compile();
         }

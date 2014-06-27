@@ -6,3 +6,5 @@ Patterns/bin/
 *.suo
 packages/
 *.orig
+Patterns.Tests/obj/
+Patterns.Tests/bin/
