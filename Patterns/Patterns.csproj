@@ -44,12 +44,6 @@
       <DependentUpon>Union.tt</DependentUpon>
     </Compile>
     <Compile Include="Containers\Pair.cs" />
-    <Compile Include="ExprMatch.cs" />
-    <Compile Include="ExprMatcherOverloads.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExprMatcherOverloads.tt</DependentUpon>
-    </Compile>
     <Compile Include="Matcher.cs" />
     <Compile Include="MatchException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,10 +52,6 @@
     <None Include="Containers\Union.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Union.cs</LastGenOutput>
-    </None>
-    <None Include="ExprMatcherOverloads.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ExprMatcherOverloads.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
