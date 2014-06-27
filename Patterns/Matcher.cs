@@ -27,13 +27,23 @@ namespace Patterns
         {
             var bindResult = Expression.Variable(typeof (TCtx), "binded");
             var caseExpr = Expression.Block(
-                //typeof(TOut),
                 new []{bindResult},
                 Expression.Assign(bindResult, Expression.Invoke(binder, Parameter)),
                 Expression.IfThen(
                     Expression.NotEqual(Expression.Convert(bindResult, typeof(object)), Expression.Constant(null)),
                     Expression.Return(RetPoint, Expression.Invoke(processor, bindResult))
                 ));
+            _caseExpressionsList.Add(caseExpr);
+        }
+
+        public void Add(Expression<Predicate<TIn>> condition, Expression<Func<TIn, TOut>> processor)
+        {
+            var caseExpr = Expression.Block(
+                new Expression[]{
+                Expression.IfThen(
+                    Expression.Invoke(condition, Parameter),
+                    Expression.Return(RetPoint, Expression.Invoke(processor, Parameter))
+                    )});
             _caseExpressionsList.Add(caseExpr);
         }
 

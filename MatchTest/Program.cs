@@ -13,7 +13,7 @@ namespace MatchTest
             {
                 {s => s as string, s => s},
                 {s => s as StringBuilder, s => s.ToString()},
-                {_ => true, _ => string.Empty}
+                {_ => true, (bool _) => "yiff"}
             };
 
             var m = matcher.ToFunc();
