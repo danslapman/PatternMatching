@@ -58,5 +58,31 @@ namespace Patterns.Tests
             Assert.Equal(new StringBuilder("string builder").ToString(), match(new StringBuilder("string builder")));
             Assert.Equal("Unknown object", match(100500));
         }
+
+        [Fact]
+        public void UnionMatch1()
+        {
+            var match = new Matcher<Union<string, StringBuilder>, string>
+            {
+                {u => u.Value1, s => s},
+                {u => u.Value2, sb => sb.ToString()}
+            }.ToFunc();
+
+            Assert.Equal("string", match("string"));
+            Assert.Equal(new StringBuilder("string builder").ToString(), match(new StringBuilder("string builder")));
+        }
+
+        [Fact]
+        public void UnionMatch2()
+        {
+            var match = new Matcher<Union<string, StringBuilder>, string>
+            {
+                {u => (string)u, s => s},
+                {u => (StringBuilder)u, sb => sb.ToString()}
+            }.ToFunc();
+
+            Assert.Equal("string", match("string"));
+            Assert.Equal(new StringBuilder("string builder").ToString(), match(new StringBuilder("string builder")));
+        }
     }
 }

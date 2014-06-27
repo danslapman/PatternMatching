@@ -64,4 +64,32 @@ match(s1); // Hello
 match(s2); // None
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Union<..> matching:
+-------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var match = new Matcher<Union<string, StringBuilder>, string>
+{
+    {u => u.Value1, s => s},
+    {u => u.Value2, sb => sb.ToString()}
+}.ToFunc();
+
+match("string"); // string
+match(new StringBuilder("stringBuilder")); // stringBuider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+or, if Your prefer explicit casts:
+----------------------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var match = new Matcher<Union<string, StringBuilder>, string>
+{
+    {u => (string)u, s => s},
+    {u => (StringBuilder)u, sb => sb.ToString()}
+}.ToFunc();
+
+match("string"); // string
+match(new StringBuilder("stringBuilder")); // stringBuider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Check tests for more examples.
