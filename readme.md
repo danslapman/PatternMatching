@@ -50,9 +50,6 @@ Matching with Some/None:
 ------------------------
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-string s1 = "Hello";
-string s2 = null;
-
 var match = new Matcher<Option<int>, int?>
 {
     // Predicate matching requires explicit type annotation
@@ -60,8 +57,8 @@ var match = new Matcher<Option<int>, int?>
     {i => i as Some<int>, i => i.Value},
 }.ToFunc();
 
-match(s1); // Hello
-match(s2); // None
+match(new None<int>()); // null
+match(new Some<int>(10)); // 10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Union<..> matching:
