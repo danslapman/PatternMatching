@@ -38,6 +38,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Containers\OptionType.cs" />
+    <Compile Include="Containers\Union.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Union.tt</DependentUpon>
+    </Compile>
     <Compile Include="Matcher.cs" />
     <Compile Include="MatchException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

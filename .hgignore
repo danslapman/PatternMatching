@@ -8,3 +8,4 @@ packages/
 *.orig
 Patterns.Tests/obj/
 Patterns.Tests/bin/
+Patterns\Containers\Union.cs
