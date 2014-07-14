@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchTest", "MatchTest\Matc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FA166E1F-D4E4-4BBF-97A6-C78FA95D6536}"
 	ProjectSection(SolutionItems) = preProject
+		copying.txt = copying.txt
 		readme.md = readme.md
 	EndProjectSection
 EndProject
