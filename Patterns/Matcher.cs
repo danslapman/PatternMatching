@@ -85,7 +85,7 @@ namespace Patterns
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException("This is a stub. There is nothing to enumerate in Matcher.");
+            throw new InvalidOperationException("This is a stub. There is nothing to enumerate in Matcher.");
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -172,7 +172,7 @@ namespace Patterns
 
         public IEnumerator<TOut> GetEnumerator()
         {
-            throw new NotImplementedException("This is a stub. There is nothing to enumerate in Matcher.");
+            throw new InvalidOperationException("This is a stub. There is nothing to enumerate in Matcher.");
         }
 
         IEnumerator IEnumerable.GetEnumerator()
