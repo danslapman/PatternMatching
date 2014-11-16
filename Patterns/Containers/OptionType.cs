@@ -40,6 +40,17 @@ namespace Patterns.Containers
         {
             get { return _value; }
         }
+
+        public override bool Equals(object obj)
+        {
+            var otherValue = obj as Some<T>;
+            return otherValue != null && _value.Equals(otherValue.Value);
+        }
+
+        public override int GetHashCode()
+        {
+            return _value.GetHashCode();
+        }
     }
 
     public sealed class None<T> : Option<T>, None
@@ -52,6 +63,16 @@ namespace Patterns.Containers
         public override T Value
         {
             get { throw new NoneValueAccessException(); }
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is None;
+        }
+
+        public override int GetHashCode()
+        {
+            return 0;
         }
     }
 
