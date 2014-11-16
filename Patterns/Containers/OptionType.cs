@@ -5,7 +5,20 @@ namespace Patterns.Containers
     public interface None { }
     public interface Some { }
 
-    public abstract class Option<T>
+    public abstract class Option
+    {
+        public static bool operator ==(Option left, Option right)
+        {
+            return !ReferenceEquals(left, null) && !ReferenceEquals(right, null) && left.Equals(right);
+        }
+
+        public static bool operator !=(Option left, Option right)
+        {
+            return !(left == right);
+        }
+    }
+
+    public abstract class Option<T> : Option
     {
         public abstract bool HasValue { get; }
 
@@ -44,7 +57,7 @@ namespace Patterns.Containers
         public override bool Equals(object obj)
         {
             var otherValue = obj as Some<T>;
-            return otherValue != null && _value.Equals(otherValue.Value);
+            return !ReferenceEquals(otherValue, null) && _value.Equals(otherValue.Value);
         }
 
         public override int GetHashCode()
