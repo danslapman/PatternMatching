@@ -61,6 +61,16 @@ public static implicit operator Union<<#=typeSig#>>(T<#=j#> value)
 
             return Value.Equals(other.Value);
         }
+
+        public static bool operator ==(Union<<#=typeSig#>> left, Union<<#=typeSig#>> right)
+        {
+            return !ReferenceEquals(left, null) && !ReferenceEquals(right, null) && left.Equals(right);
+        }
+
+        public static bool operator !=(Union<<#=typeSig#>> left, Union<<#=typeSig#>> right)
+        {
+            return !(left == right);
+        }
     }
 
 <#}#>
