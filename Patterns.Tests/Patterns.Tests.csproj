@@ -53,10 +53,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DataUnit.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="MatcherTests.cs" />
     <Compile Include="OptionStructuralEqualityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnionStructuralEqualityTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Patterns\Patterns.csproj">
