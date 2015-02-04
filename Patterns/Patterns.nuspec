@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://www.wtfpl.net/txt/copying/</licenseUrl>
+    <projectUrl>https://bitbucket.org/danslapman/patterns</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>GetOrElse, Map &amp; FMap for Option&lt;T&gt;</releaseNotes>
+    <copyright></copyright>
+    <tags>csharp patternmatching patterns</tags>
+  </metadata>
+</package>

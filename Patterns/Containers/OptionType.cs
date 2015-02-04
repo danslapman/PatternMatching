@@ -33,6 +33,10 @@ namespace Patterns.Containers
         {
             return value.Value;
         }
+
+        public abstract T GetOrElse(T defaultValue);
+        public abstract Option<TR> Map<TR>(Func<T, TR> func);
+        public abstract Option<TR> FlatMap<TR>(Func<T, Option<TR>> func);
     }
 
     public sealed class Some<T> : Option<T>, Some
@@ -52,6 +56,21 @@ namespace Patterns.Containers
         public override T Value
         {
             get { return _value; }
+        }
+
+        public override T GetOrElse(T defaultValue)
+        {
+            return _value;
+        }
+
+        public override Option<TR> Map<TR>(Func<T, TR> func)
+        {
+            return func(_value);
+        }
+
+        public override Option<TR> FlatMap<TR>(Func<T, Option<TR>> func)
+        {
+            return func(_value);
         }
 
         public override bool Equals(object obj)
@@ -76,6 +95,21 @@ namespace Patterns.Containers
         public override T Value
         {
             get { throw new NoneValueAccessException(); }
+        }
+
+        public override T GetOrElse(T defaultValue)
+        {
+            return defaultValue;
+        }
+
+        public override Option<TR> Map<TR>(Func<T, TR> func)
+        {
+            return new None<TR>();
+        }
+
+        public override Option<TR> FlatMap<TR>(Func<T, Option<TR>> func)
+        {
+            return new None<TR>();
         }
 
         public override bool Equals(object obj)
