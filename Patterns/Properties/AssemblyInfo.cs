@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Patterns")]
 [assembly: AssemblyDescription("Pattern matching implementation")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("LeviySoft")]
 [assembly: AssemblyProduct("Patterns")]
 [assembly: AssemblyCopyright("Copyright ©danslapman, 2014")]
 [assembly: AssemblyTrademark("")]
