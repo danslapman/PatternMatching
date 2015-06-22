@@ -5,7 +5,9 @@ namespace Patterns.Containers
     public interface None { }
     public interface Some { }
 
+#pragma warning disable 660,661
     public abstract class Option
+#pragma warning restore 660,661
     {
         public static bool operator ==(Option left, Option right)
         {
