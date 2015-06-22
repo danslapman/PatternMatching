@@ -50,15 +50,9 @@ namespace Patterns.Containers
             _value = value;
         }
 
-        public override bool HasValue
-        {
-            get { return true; }
-        }
+        public override bool HasValue => true;
 
-        public override T Value
-        {
-            get { return _value; }
-        }
+        public override T Value => _value;
 
         public override T GetOrElse(T defaultValue)
         {
@@ -89,10 +83,7 @@ namespace Patterns.Containers
 
     public sealed class None<T> : Option<T>, None
     {
-        public override bool HasValue
-        {
-            get { return false; }
-        }
+        public override bool HasValue => false;
 
         public override T Value
         {
@@ -127,9 +118,6 @@ namespace Patterns.Containers
 
     public class NoneValueAccessException : Exception
     {
-        public override string Message
-        {
-            get { return "None value attempt"; }
-        }
+        public override string Message => "None value attempt";
     }
 }

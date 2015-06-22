@@ -11,17 +11,11 @@ namespace Patterns
         private readonly List<BlockExpression> _caseExpressionsList = new List<BlockExpression>();
 
         private ParameterExpression _parameter;
-        private ParameterExpression Parameter
-        {
-            get { return _parameter ?? (_parameter = Expression.Parameter(typeof(T), "inputValue")); }
-        }
+        private ParameterExpression Parameter => _parameter ?? (_parameter = Expression.Parameter(typeof(T), "inputValue"));
 
         private LabelTarget _retPoint;
 
-        private LabelTarget RetPoint
-        {
-            get { return _retPoint ?? (_retPoint = Expression.Label()); }
-        }
+        private LabelTarget RetPoint => _retPoint ?? (_retPoint = Expression.Label());
 
         public void Add<TCtx>(Expression<Func<T, TCtx>> binder, Expression<Action<TCtx>> processor)
         {
@@ -38,12 +32,10 @@ namespace Patterns
 
         public void Add(Expression<Predicate<T>> condition, Expression<Action<T>> processor)
         {
-            var caseExpr = Expression.Block(
-                new Expression[]{
-                Expression.IfThen(
-                    Expression.Invoke(condition, Parameter),
-                    Expression.Return(RetPoint, Expression.Invoke(processor, Parameter))
-                    )});
+            var caseExpr = Expression.Block(Expression.IfThen(
+                        Expression.Invoke(condition, Parameter),
+                        Expression.Return(RetPoint, Expression.Invoke(processor, Parameter))
+                        ));
             _caseExpressionsList.Add(caseExpr);
         }
 
@@ -63,10 +55,7 @@ namespace Patterns
 
         private Action<T> _matcher;
 
-        private Action<T> MatcherFunc
-        {
-            get { return _matcher ?? (_matcher = CompileMatcher()); }
-        }
+        private Action<T> MatcherFunc => _matcher ?? (_matcher = CompileMatcher());
 
         public void Match(T value)
         {
@@ -99,17 +88,11 @@ namespace Patterns
         private readonly List<BlockExpression> _caseExpressionsList = new List<BlockExpression>();
 
         private ParameterExpression _parameter;
-        private ParameterExpression Parameter
-        {
-            get { return _parameter ?? (_parameter = Expression.Parameter(typeof (TIn), "inputValue")); }
-        }
+        private ParameterExpression Parameter => _parameter ?? (_parameter = Expression.Parameter(typeof (TIn), "inputValue"));
 
         private LabelTarget _retPoint;
 
-        private LabelTarget RetPoint
-        {
-            get { return _retPoint ?? (_retPoint = Expression.Label(typeof (TOut))); }
-        }
+        private LabelTarget RetPoint => _retPoint ?? (_retPoint = Expression.Label(typeof (TOut)));
 
         public void Add<TCtx>(Expression<Func<TIn, TCtx>> binder, Expression<Func<TCtx, TOut>> processor)
         {
@@ -126,12 +109,10 @@ namespace Patterns
 
         public void Add(Expression<Predicate<TIn>> condition, Expression<Func<TIn, TOut>> processor)
         {
-            var caseExpr = Expression.Block(
-                new Expression[]{
-                Expression.IfThen(
-                    Expression.Invoke(condition, Parameter),
-                    Expression.Return(RetPoint, Expression.Invoke(processor, Parameter))
-                    )});
+            var caseExpr = Expression.Block(Expression.IfThen(
+                        Expression.Invoke(condition, Parameter),
+                        Expression.Return(RetPoint, Expression.Invoke(processor, Parameter))
+                        ));
             _caseExpressionsList.Add(caseExpr);
         }
 
@@ -150,10 +131,7 @@ namespace Patterns
 
         private Func<TIn, TOut> _matcher;
 
-        private Func<TIn, TOut> MatcherFunc
-        {
-            get { return _matcher ?? (_matcher = CompileMatcher()); }
-        }
+        private Func<TIn, TOut> MatcherFunc => _matcher ?? (_matcher = CompileMatcher());
 
         public TOut Match(TIn value)
         {
