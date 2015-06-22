@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using Patterns.Containers;
+﻿using Patterns.Containers;
 using Xunit;
 
 namespace Patterns.Tests

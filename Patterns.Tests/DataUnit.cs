@@ -2,18 +2,16 @@
 {
     public class DataUnit
     {
-        private readonly int _amount;
-
-        public int Amount { get { return _amount; } }
+        public int Amount { get; }
 
         public DataUnit(int amount)
         {
-            _amount = amount;
+            Amount = amount;
         }
 
         protected bool Equals(DataUnit other)
         {
-            return _amount == other._amount;
+            return Amount == other.Amount;
         }
 
         public override bool Equals(object obj)
@@ -26,7 +24,7 @@
 
         public override int GetHashCode()
         {
-            return _amount;
+            return Amount;
         }
     }
 }

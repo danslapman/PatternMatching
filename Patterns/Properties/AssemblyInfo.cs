@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("LeviySoft")]
 [assembly: AssemblyProduct("Patterns")]
-[assembly: AssemblyCopyright("Copyright ©danslapman, 2014")]
+[assembly: AssemblyCopyright("Copyright ©danslapman, 2014-2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
