@@ -6,10 +6,9 @@ namespace Patterns
 {
     public static class Case
     {
-        public static Expression<Func<string, string>> Rx(string regexPattern)
+        public static Expression<Func<string, string>> Rx(Regex regexPattern)
         {
             var parameterExpression = Expression.Parameter(typeof (string), "strArg");
-            var regexExpression = Expression.Variable(typeof (Regex), "rx");
             var matchExpression = Expression.Variable(typeof (Match), "match");
 
             var retPoint = Expression.Label(typeof (string));
@@ -17,12 +16,10 @@ namespace Patterns
             var successProperty = Expression.Property(matchExpression, "Success");
             var resultProperty = Expression.Property(matchExpression, "Value");
 
-            var block = Expression.Block(new[] { regexExpression, matchExpression},
-                Expression.Assign(regexExpression, 
-                Expression.New(typeof(Regex).GetConstructor(new[] { typeof(string) }), Expression.Constant(regexPattern, typeof(string)))),
+            var block = Expression.Block(new[] { matchExpression},
                 Expression.Assign(matchExpression,
                     Expression.Call(
-                        regexExpression, 
+                        Expression.Constant(regexPattern, typeof(Regex)), 
                         typeof (Regex).GetMethod("Match", new[] {typeof (string)}),
                         parameterExpression)),
                 Expression.IfThenElse(

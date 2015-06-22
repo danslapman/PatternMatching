@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using Patterns;
 
 namespace MatchTest
@@ -9,7 +10,7 @@ namespace MatchTest
         {
             var match = new Matcher<string, string>
             {
-                { Case.Rx("\\d{3}"), a => a },
+                { Case.Rx(new Regex("\\d{3}")), a => a },
                 { _ => true, (string _) => "nope" }
             }.ToFunc();
 
