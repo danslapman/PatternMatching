@@ -1,6 +1,5 @@
 ﻿using System;
 using Patterns;
-using Patterns.Containers;
 
 namespace MatchTest
 {
@@ -8,14 +7,13 @@ namespace MatchTest
     {
         static void Main(string[] args)
         {
-            var match = new Matcher<Option<int>, int?>
+            var match = new Matcher<string, string>
             {
-                 {i => i is None, (Option<int> _) => null},
-                {i => i as Some<int>, i => i.Value}
+                { Case.Rx("\\d{3}"), a => a },
+                { _ => true, (string _) => "nope" }
             }.ToFunc();
-            
-            Console.WriteLine(match(new None<int>()));
-            Console.WriteLine(match(10));
+
+            Console.WriteLine(match("333"));
             Console.ReadKey();
         }
     }

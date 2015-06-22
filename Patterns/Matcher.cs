@@ -126,7 +126,9 @@ namespace Patterns
 
             var matcherExpression = Expression.Block(_caseExpressionsList.Concat(finalExpressions));
 
-            return Expression.Lambda<Func<TIn, TOut>>(matcherExpression, Parameter).Compile();
+            var lambda = Expression.Lambda<Func<TIn, TOut>>(matcherExpression, Parameter);
+            var matcher = lambda.Compile();
+            return matcher;
         }
 
         private Func<TIn, TOut> _matcher;
