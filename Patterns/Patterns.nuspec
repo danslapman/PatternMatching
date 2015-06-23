@@ -10,7 +10,7 @@
     <projectUrl>https://bitbucket.org/danslapman/patterns</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>GetOrElse, Map &amp; FMap for Option&lt;T&gt;</releaseNotes>
+    <releaseNotes>Matching with regexes</releaseNotes>
     <copyright></copyright>
     <tags>csharp patternmatching patterns</tags>
   </metadata>
