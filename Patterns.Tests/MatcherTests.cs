@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 using Patterns.Containers;
 using Xunit;
 
@@ -83,6 +84,28 @@ namespace Patterns.Tests
 
             Assert.Equal("string", match("string"));
             Assert.Equal(new StringBuilder("string builder").ToString(), match(new StringBuilder("string builder")));
+        }
+
+        [Fact]
+        public void RegexCaseMatch()
+        {
+            var match = new Matcher<string, string>
+            {
+                { Case.Rx(new Regex("\\d{3}")), s => "Success" }
+            }.ToFunc();
+
+            Assert.Equal("Success", match("123"));
+        }
+
+        [Fact]
+        public void RegexWithGroupMatchTest()
+        {
+            var match = new Matcher<string, string>
+            {
+                { Case.Rx(new Regex("this\\s(\\d{3})")), s => s }
+            }.ToFunc();
+
+            Assert.Equal("123", match("this 123"));
         }
     }
 }

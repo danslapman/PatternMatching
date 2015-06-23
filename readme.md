@@ -1,15 +1,13 @@
-C# Pattern Matching 2.2
+C# Pattern Matching 2.5
 =======================
 
 This is second a try to implement pattern matching in C# as-idiomatic-as-possible. The
 idea was to avoid fluent matcher building and to provide a simple and clear
 syntax.
 
-New in 2.2:
+New in 2.5:
 -----------
-- GetOrElse()
-- Map
-- FlatMap
+- Case.Rx for matching with Regexes
 
 Plans:
 ------
@@ -99,4 +97,19 @@ match("string"); // string
 match(new StringBuilder("stringBuilder")); // stringBuider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Check tests for more examples.
+Matching with Regexes:
+----------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var match = new Matcher<Union<string, StringBuilder>, string>
+{
+    {Case.Rx(new Regex("\\d{2}")), s => s},
+    {Case.Rx(new Regex("test\\s(\\d{3})")), s => s}
+}.ToFunc();
+
+match("12"); // 12
+match("test 123"); // 123
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Check out tests for more examples.

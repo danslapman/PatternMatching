@@ -10,11 +10,11 @@ namespace MatchTest
         {
             var match = new Matcher<string, string>
             {
-                { Case.Rx(new Regex("\\d{3}")), a => a },
+                { Case.Rx(new Regex("test\\s(\\d{3})")), a => a },
                 { _ => true, (string _) => "nope" }
             }.ToFunc();
 
-            Console.WriteLine(match("333"));
+            Console.WriteLine(match("test 333"));
             Console.ReadKey();
         }
     }

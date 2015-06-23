@@ -12,10 +12,12 @@ namespace Patterns
             var matchExpression = Expression.Variable(typeof (Match), "match");
 
             var retPoint = Expression.Label(typeof (string));
-
             var successProperty = Expression.Property(matchExpression, "Success");
-            var resultProperty = Expression.Property(matchExpression, "Value");
-
+            var resultProperty = Expression.Property(
+                regexPattern.GetGroupNames().Length > 1 ?
+                (Expression)Expression.Property(Expression.Property(matchExpression, "Groups"), "Item", Expression.Constant(1)) : 
+                matchExpression, "Value");
+            
             var block = Expression.Block(new[] { matchExpression},
                 Expression.Assign(matchExpression,
                     Expression.Call(
