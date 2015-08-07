@@ -18,6 +18,16 @@ namespace Patterns.Containers
         {
             return !(left == right);
         }
+
+        public static Option<T> Some<T>(T value)
+        {
+            return new Some<T>(value);
+        }
+
+        public static Option<T> None<T>()
+        {
+            return new None<T>();
+        }
     }
 
     public abstract class Option<T> : Option
@@ -39,16 +49,6 @@ namespace Patterns.Containers
         public abstract T GetOrElse(T defaultValue);
         public abstract Option<TR> Map<TR>(Func<T, TR> func);
         public abstract Option<TR> FlatMap<TR>(Func<T, Option<TR>> func);
-
-        public static Option<T> Some(T value)
-        {
-            return new Some<T>(value);
-        }
-
-        public static Option<T> None()
-        {
-            return new None<T>();
-        } 
     }
 
     public sealed class Some<T> : Option<T>, Some
