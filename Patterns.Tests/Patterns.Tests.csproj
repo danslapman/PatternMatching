@@ -71,6 +71,7 @@
     <Compile Include="MatcherTests.cs" />
     <Compile Include="OptionStructuralEqualityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultTests.cs" />
     <Compile Include="UnionStructuralEqualityTests.cs" />
   </ItemGroup>
   <ItemGroup>
