@@ -10,7 +10,7 @@
     <projectUrl>https://bitbucket.org/danslapman/patterns</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Matching with regexes</releaseNotes>
+    <releaseNotes>Static helper functions</releaseNotes>
     <copyright></copyright>
     <tags>csharp patternmatching patterns</tags>
   </metadata>

@@ -19,6 +19,16 @@ namespace Patterns.Containers
         {
             return !(left == right);
         }
+
+        public static Option<T> Some<T>(T value)
+        {
+            return new Some<T>(value);
+        }
+
+        public static Option<T> None<T>()
+        {
+            return new None<T>();
+        }
     }
 
     public abstract class Option<T> : Option
