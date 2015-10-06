@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="Case.cs" />
     <Compile Include="Containers\OptionType.cs" />
+    <Compile Include="Containers\Result.cs" />
     <Compile Include="Containers\Union.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
