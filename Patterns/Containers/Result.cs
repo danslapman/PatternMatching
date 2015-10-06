@@ -36,6 +36,11 @@ namespace Patterns.Containers
         {
             return new Some<TSucc>(Value);
         }
+
+        public override string ToString()
+        {
+            return $"Success({Value})";
+        }
     }
 
     public sealed class Failure<TSucc, TErr> : Result<TSucc, TErr>
@@ -63,6 +68,11 @@ namespace Patterns.Containers
         public override Option<TSucc> ToOption()
         {
             return new None<TSucc>();
+        }
+
+        public override string ToString()
+        {
+            return $"Failure({Error})";
         }
     }
 }

@@ -80,6 +80,11 @@ namespace Patterns.Containers
         {
             return _value.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return $"Some({Value})";
+        }
     }
 
     public sealed class None<T> : Option<T>, None
@@ -114,6 +119,11 @@ namespace Patterns.Containers
         public override int GetHashCode()
         {
             return 0;
+        }
+
+        public override string ToString()
+        {
+            return "None";
         }
     }
 

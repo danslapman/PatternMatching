@@ -1,14 +1,14 @@
-C# Pattern Matching 2.5
+C# Pattern Matching 2.7
 =======================
 
 This is second a try to implement pattern matching in C# as-idiomatic-as-possible. The
 idea was to avoid fluent matcher building and to provide a simple and clear
 syntax.
 
-New in 2.5:
+New in 2.7:
 -----------
-- Case.Rx for matching with Regexes
-
+- New Result<TSucc, TRes> container type for representing conditional results
+ 
 Plans:
 ------
 - Scala-like projections for Union
