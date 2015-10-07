@@ -9,6 +9,16 @@ namespace Patterns.Containers
         public abstract Result<TSucc, TErr> Map(Func<TSucc, TSucc> f);
         public abstract Result<TSucc, TErr> FlatMap(Func<TSucc, Result<TSucc, TErr>> f);
         public abstract Option<TSucc> ToOption();
+
+        public static implicit operator Result<TSucc, TErr>(TSucc instance)
+        {
+            return new Success<TSucc, TErr>(instance);
+        }
+
+        public static implicit operator Result<TSucc, TErr>(TErr instance)
+        {
+            return new Failure<TSucc, TErr>(instance);
+        }
     }
 
     public sealed class Success<TSucc, TErr> : Result<TSucc, TErr>

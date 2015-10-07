@@ -10,7 +10,7 @@
     <projectUrl>https://bitbucket.org/danslapman/patterns</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Result&lt;TSucc,TErr&gt; container</releaseNotes>
+    <releaseNotes>Implicit conversions for Result&lt;TSucc,TErr&gt;</releaseNotes>
     <copyright></copyright>
     <tags>csharp patternmatching patterns</tags>
   </metadata>
