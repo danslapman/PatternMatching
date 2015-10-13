@@ -8,6 +8,8 @@ namespace Patterns.Containers
         public abstract bool IsFailure { get; }
         public abstract Result<TRes, TErr> Map<TRes>(Func<TSucc, TRes> f);
         public abstract Result<TRes, TErr> FlatMap<TRes>(Func<TSucc, Result<TRes, TErr>> f);
+        public abstract Result<TSucc, TRes> MapError<TRes>(Func<TErr, TRes> f);
+        public abstract Result<TSucc, TRes> FlatMapError<TRes>(Func<TErr, Result<TSucc, TRes>> f); 
         public abstract Option<TSucc> ToOption();
 
         public static implicit operator Result<TSucc, TErr>(TSucc instance)
@@ -34,12 +36,22 @@ namespace Patterns.Containers
         public override bool IsFailure => false;
         public override Result<TRes, TErr> Map<TRes>(Func<TSucc, TRes> f)
         {
-            return new Success<TRes, TErr>(f(Value));
+            return f(Value);
         }
 
         public override Result<TRes, TErr> FlatMap<TRes>(Func<TSucc, Result<TRes, TErr>> f)
         {
             return f(Value);
+        }
+
+        public override Result<TSucc, TRes> MapError<TRes>(Func<TErr, TRes> f)
+        {
+            return Value;
+        }
+
+        public override Result<TSucc, TRes> FlatMapError<TRes>(Func<TErr, Result<TSucc, TRes>> f)
+        {
+            return Value;
         }
 
         public override Option<TSucc> ToOption()
@@ -67,12 +79,22 @@ namespace Patterns.Containers
 
         public override Result<TRes, TErr> Map<TRes>(Func<TSucc, TRes> f)
         {
-            return new Failure<TRes, TErr>(Error);
+            return Error;
         }
 
         public override Result<TRes, TErr> FlatMap<TRes>(Func<TSucc, Result<TRes, TErr>> f)
         {
-            return new Failure<TRes, TErr>(Error);
+            return Error;
+        }
+
+        public override Result<TSucc, TRes> MapError<TRes>(Func<TErr, TRes> f)
+        {
+            return f(Error);
+        }
+
+        public override Result<TSucc, TRes> FlatMapError<TRes>(Func<TErr, Result<TSucc, TRes>> f)
+        {
+            return f(Error);
         }
 
         public override Option<TSucc> ToOption()
