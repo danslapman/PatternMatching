@@ -6,8 +6,8 @@ namespace Patterns.Containers
     {
         public abstract bool IsSuccess { get; }
         public abstract bool IsFailure { get; }
-        public abstract Result<TSucc, TErr> Map(Func<TSucc, TSucc> f);
-        public abstract Result<TSucc, TErr> FlatMap(Func<TSucc, Result<TSucc, TErr>> f);
+        public abstract Result<TRes, TErr> Map<TRes>(Func<TSucc, TRes> f);
+        public abstract Result<TRes, TErr> FlatMap<TRes>(Func<TSucc, Result<TRes, TErr>> f);
         public abstract Option<TSucc> ToOption();
 
         public static implicit operator Result<TSucc, TErr>(TSucc instance)
@@ -32,12 +32,12 @@ namespace Patterns.Containers
 
         public override bool IsSuccess => true;
         public override bool IsFailure => false;
-        public override Result<TSucc, TErr> Map(Func<TSucc, TSucc> f)
+        public override Result<TRes, TErr> Map<TRes>(Func<TSucc, TRes> f)
         {
-            return new Success<TSucc, TErr>(f(Value));
+            return new Success<TRes, TErr>(f(Value));
         }
 
-        public override Result<TSucc, TErr> FlatMap(Func<TSucc, Result<TSucc, TErr>> f)
+        public override Result<TRes, TErr> FlatMap<TRes>(Func<TSucc, Result<TRes, TErr>> f)
         {
             return f(Value);
         }
@@ -65,14 +65,14 @@ namespace Patterns.Containers
         public override bool IsSuccess => false;
         public override bool IsFailure => true;
 
-        public override Result<TSucc, TErr> Map(Func<TSucc, TSucc> f)
+        public override Result<TRes, TErr> Map<TRes>(Func<TSucc, TRes> f)
         {
-            return this;
+            return new Failure<TRes, TErr>(Error);
         }
 
-        public override Result<TSucc, TErr> FlatMap(Func<TSucc, Result<TSucc, TErr>> f)
+        public override Result<TRes, TErr> FlatMap<TRes>(Func<TSucc, Result<TRes, TErr>> f)
         {
-            return this;
+            return new Failure<TRes, TErr>(Error);
         }
 
         public override Option<TSucc> ToOption()
