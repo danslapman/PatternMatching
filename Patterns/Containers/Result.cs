@@ -1,7 +1,22 @@
 ﻿using System;
+// ReSharper disable InconsistentNaming
+// ReSharper disable TypeParameterCanBeVariant
 
 namespace Patterns.Containers
 {
+    public interface Success { }
+    public interface Failure { }
+
+    public interface Success<TSucc> : Success
+    {
+        TSucc Value { get; }
+    }
+
+    public interface Failure<TErr> : Failure
+    {
+        TErr Error { get; }
+    }
+
     public abstract class Result<TSucc, TErr>
     {
         public abstract bool IsSuccess { get; }
@@ -23,7 +38,7 @@ namespace Patterns.Containers
         }
     }
 
-    public sealed class Success<TSucc, TErr> : Result<TSucc, TErr>
+    public sealed class Success<TSucc, TErr> : Result<TSucc, TErr>, Success<TSucc>
     {
         public TSucc Value { get; }
 
@@ -65,7 +80,7 @@ namespace Patterns.Containers
         }
     }
 
-    public sealed class Failure<TSucc, TErr> : Result<TSucc, TErr>
+    public sealed class Failure<TSucc, TErr> : Result<TSucc, TErr>, Failure<TErr>
     {
         public TErr Error { get; }
 
