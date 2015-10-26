@@ -6,6 +6,10 @@ using System.Linq.Expressions;
 
 namespace Patterns
 {
+    /// <summary>
+    /// Pattern matcher with void return type
+    /// </summary>
+    /// <typeparam name="T">Matcher argument type</typeparam>
     public class Matcher<T> : IEnumerable<T>
     {
         private readonly List<BlockExpression> _caseExpressionsList = new List<BlockExpression>();
@@ -17,6 +21,10 @@ namespace Patterns
 
         private LabelTarget RetPoint => _retPoint ?? (_retPoint = Expression.Label());
 
+        /// <summary>
+        /// Adds context-based matching case
+        /// </summary>
+        /// <typeparam name="TCtx">Context type</typeparam>
         public void Add<TCtx>(Expression<Func<T, TCtx>> binder, Expression<Action<TCtx>> processor)
         {
             var bindResult = Expression.Variable(typeof(TCtx), "binded");
@@ -30,6 +38,9 @@ namespace Patterns
             _caseExpressionsList.Add(caseExpr);
         }
 
+        /// <summary>
+        /// Adds predicated-based matching case
+        /// </summary>
         public void Add(Expression<Predicate<T>> condition, Expression<Action<T>> processor)
         {
             var caseExpr = Expression.Block(Expression.IfThen(
@@ -57,21 +68,33 @@ namespace Patterns
 
         private Action<T> MatcherFunc => _matcher ?? (_matcher = CompileMatcher());
 
+        /// <summary>
+        /// Performs match on the given value
+        /// </summary>
         public void Match(T value)
         {
             MatcherFunc(value);
         }
 
+        /// <summary>
+        /// Converts matcher into Action&lt;T&gt; instance
+        /// </summary>
         public static implicit operator Action<T>(Matcher<T> matcher)
         {
             return matcher.Match;
         }
 
+        /// <summary>
+        /// Creates Action&lt;T&gt; instance
+        /// </summary>
         public Action<T> ToAction()
         {
             return Match;
         }
 
+        /// <summary>
+        /// Stub
+        /// </summary>
         public IEnumerator<T> GetEnumerator()
         {
             throw new InvalidOperationException("This is a stub. There is nothing to enumerate in Matcher.");
@@ -83,6 +106,11 @@ namespace Patterns
         }
     }
 
+    /// <summary>
+    /// Pattern matcher
+    /// </summary>
+    /// <typeparam name="TIn">Argument type</typeparam>
+    /// <typeparam name="TOut">Return type</typeparam>
     public class Matcher <TIn, TOut> : IEnumerable<TOut>
     {
         private readonly List<BlockExpression> _caseExpressionsList = new List<BlockExpression>();
@@ -94,6 +122,10 @@ namespace Patterns
 
         private LabelTarget RetPoint => _retPoint ?? (_retPoint = Expression.Label(typeof (TOut)));
 
+        /// <summary>
+        /// Adds context-based matching case
+        /// </summary>
+        /// <typeparam name="TCtx">Context type</typeparam>
         public void Add<TCtx>(Expression<Func<TIn, TCtx>> binder, Expression<Func<TCtx, TOut>> processor)
         {
             var bindResult = Expression.Variable(typeof (TCtx), "binded");
@@ -107,6 +139,9 @@ namespace Patterns
             _caseExpressionsList.Add(caseExpr);
         }
 
+        /// <summary>
+        /// Adds predicated-based matching case
+        /// </summary>
         public void Add(Expression<Predicate<TIn>> condition, Expression<Func<TIn, TOut>> processor)
         {
             var caseExpr = Expression.Block(Expression.IfThen(
@@ -135,21 +170,33 @@ namespace Patterns
 
         private Func<TIn, TOut> MatcherFunc => _matcher ?? (_matcher = CompileMatcher());
 
+        /// <summary>
+        /// Performs match on the given value
+        /// </summary>
         public TOut Match(TIn value)
         {
             return MatcherFunc(value);
         }
 
+        /// <summary>
+        /// Converts matcher into Func&lt;T&gt; instance
+        /// </summary>
         public static implicit operator Func<TIn, TOut>(Matcher<TIn, TOut> matcher)
         {
             return matcher.Match;
         }
 
+        /// <summary>
+        /// Creates Func&lt;T&gt; instance
+        /// </summary>
         public Func<TIn, TOut> ToFunc()
         {
             return Match;
         }
 
+        /// <summary>
+        /// Stub
+        /// </summary>
         public IEnumerator<TOut> GetEnumerator()
         {
             throw new InvalidOperationException("This is a stub. There is nothing to enumerate in Matcher.");
