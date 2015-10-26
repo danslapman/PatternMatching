@@ -4,8 +4,16 @@ using System.Text.RegularExpressions;
 
 namespace Patterns
 {
+    /// <summary>
+    /// Class containing helper methods for case construction
+    /// </summary>
     public static class Case
     {
+        /// <summary>
+        /// Creates regular expression case
+        /// </summary>
+        /// <param name="regexPattern">Regular expression instance</param>
+        /// <returns>Case expression</returns>
         public static Expression<Func<string, string>> Rx(Regex regexPattern)
         {
             var parameterExpression = Expression.Parameter(typeof (string), "strArg");
