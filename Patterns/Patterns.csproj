@@ -46,6 +46,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Union.tt</DependentUpon>
     </Compile>
+    <Compile Include="Extensions.cs" />
     <Compile Include="Matcher.cs" />
     <Compile Include="MatchException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
