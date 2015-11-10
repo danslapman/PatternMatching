@@ -167,6 +167,23 @@ namespace Patterns.Containers
         }
 
         /// <summary>
+        /// Determines whether the specified object is equal to the specified object
+        /// </summary>
+        public override bool Equals(object obj)
+        {
+            var success = obj as Success<TSucc, TErr>;
+            return success != null && Value.Equals(success.Value);
+        }
+
+        /// <summary>
+        /// Serves as the default hash function
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+
+        /// <summary>
         /// Returns a string that represents the current object
         /// </summary>
         public override string ToString()
@@ -243,6 +260,23 @@ namespace Patterns.Containers
         public override Option<TSucc> ToOption()
         {
             return new None<TSucc>();
+        }
+
+        /// <summary>
+        /// Determines whether the specified object is equal to the specified object
+        /// </summary>
+        public override bool Equals(object obj)
+        {
+            var failure = obj as Failure<TSucc, TErr>;
+            return failure != null && Error.Equals(failure.Error);
+        }
+
+        /// <summary>
+        /// Serves as the default hash function
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return Error.GetHashCode();
         }
 
         /// <summary>
