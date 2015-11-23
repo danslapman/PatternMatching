@@ -73,24 +73,10 @@ Union<..> matching:
 -------------------
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var match = new Matcher<Union<string, StringBuilder>, string>
+var match = new UnionMatcher<Union<string, StringBuilder>, string>
 {
-    {u => u.Value1, s => s},
-    {u => u.Value2, sb => sb.ToString()}
-}.ToFunc();
-
-match("string"); // string
-match(new StringBuilder("stringBuilder")); // stringBuider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-or, if Your prefer explicit casts:
-----------------------------------
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var match = new Matcher<Union<string, StringBuilder>, string>
-{
-    {u => (string)u, s => s},
-    {u => (StringBuilder)u, sb => sb.ToString()}
+    {Case.OfType<string>(), (string s) => s},
+    {Case.OfType<StringBuilder>(), sb => sb.ToString()}
 }.ToFunc();
 
 match("string"); // string
