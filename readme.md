@@ -1,24 +1,18 @@
-C# Pattern Matching 2.7
+C# Pattern Matching 3.0
 =======================
 
 This is second a try to implement pattern matching in C# as-idiomatic-as-possible. The
 idea was to avoid fluent matcher building and to provide a simple and clear
 syntax.
 
-New in 2.7:
+New in 3.0:
 -----------
-- New Result<TSucc, TRes> container type for representing conditional results
+- Complete redesign of Union<..> type (more type-safe)
  
-Plans:
-------
-- Scala-like projections for Union
-
-Breaking changes agains 1.* branch:
+Breaking changes agains 2.* branch:
 -----------------------------------
-- Matcher<..> now is ExpressionTree-based, ExprMatcher is removed. However,
-lambda-functions (Func<..>, not Expression<Func<..>>) are no longer supported.
-- Union-based Matcher overloads removed.
-- Pair<T1, T2> class removed, builtin Tuple<T1, T2> class can be used instead.
+- Unions must be matched with UnionMatcher
+- There is no more other way to extract value from Union<..> but pattern matching
 
 
 Usage
