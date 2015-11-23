@@ -12,14 +12,24 @@ namespace Patterns
     /// <typeparam name="T">Matcher argument type</typeparam>
     public class Matcher<T> : IEnumerable<T>
     {
-        private readonly List<BlockExpression> _caseExpressionsList = new List<BlockExpression>();
+        /// <summary>
+        /// List of case expressions
+        /// </summary>
+        protected readonly List<BlockExpression> CaseExpressionsList = new List<BlockExpression>();
 
         private ParameterExpression _parameter;
-        private ParameterExpression Parameter => _parameter ?? (_parameter = Expression.Parameter(typeof(T), "inputValue"));
+
+        /// <summary>
+        /// Expression representing matching parameter
+        /// </summary>
+        protected ParameterExpression Parameter => _parameter ?? (_parameter = Expression.Parameter(typeof(T), "inputValue"));
 
         private LabelTarget _retPoint;
 
-        private LabelTarget RetPoint => _retPoint ?? (_retPoint = Expression.Label());
+        /// <summary>
+        /// Expression representing return point
+        /// </summary>
+        protected LabelTarget RetPoint => _retPoint ?? (_retPoint = Expression.Label());
 
         /// <summary>
         /// Adds context-based matching case
@@ -35,7 +45,7 @@ namespace Patterns
                     Expression.NotEqual(Expression.Convert(bindResult, typeof(object)), Expression.Constant(null)),
                     Expression.Return(RetPoint, Expression.Invoke(processor, bindResult))
                 ));
-            _caseExpressionsList.Add(caseExpr);
+            CaseExpressionsList.Add(caseExpr);
         }
 
         /// <summary>
@@ -47,7 +57,7 @@ namespace Patterns
                         Expression.Invoke(condition, Parameter),
                         Expression.Return(RetPoint, Expression.Invoke(processor, Parameter))
                         ));
-            _caseExpressionsList.Add(caseExpr);
+            CaseExpressionsList.Add(caseExpr);
         }
 
         private Action<T> CompileMatcher()
@@ -58,7 +68,7 @@ namespace Patterns
                 Expression.Label(RetPoint)
             };
 
-            var matcherExpression = Expression.Block(_caseExpressionsList.Concat(finalExpressions)
+            var matcherExpression = Expression.Block(CaseExpressionsList.Concat(finalExpressions)
                 );
 
             return Expression.Lambda<Action<T>>(matcherExpression, Parameter).Compile();
