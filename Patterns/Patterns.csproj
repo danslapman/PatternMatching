@@ -43,8 +43,15 @@
     <Compile Include="Containers\Result.cs" />
     <Compile Include="Containers\Union\UnionCase.cs" />
     <Compile Include="Containers\Union\Union.cs" />
+    <Compile Include="Containers\Union\Union`10.cs" />
     <Compile Include="Containers\Union\Union`2.cs" />
     <Compile Include="Containers\Union\Union`3.cs" />
+    <Compile Include="Containers\Union\Union`4.cs" />
+    <Compile Include="Containers\Union\Union`5.cs" />
+    <Compile Include="Containers\Union\Union`6.cs" />
+    <Compile Include="Containers\Union\Union`7.cs" />
+    <Compile Include="Containers\Union\Union`8.cs" />
+    <Compile Include="Containers\Union\Union`9.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Matcher.cs" />
     <Compile Include="MatchException.cs" />
