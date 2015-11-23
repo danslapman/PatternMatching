@@ -41,22 +41,18 @@
     <Compile Include="Case.cs" />
     <Compile Include="Containers\OptionType.cs" />
     <Compile Include="Containers\Result.cs" />
-    <Compile Include="Containers\Union.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Union.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Containers\Union\UnionCase.cs" />
+    <Compile Include="Containers\Union\Union.cs" />
+    <Compile Include="Containers\Union\Union`2.cs" />
+    <Compile Include="Containers\Union\Union`3.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Matcher.cs" />
     <Compile Include="MatchException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnionMatcher.cs" />
     <Compile Include="Unit.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Containers\Union.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Union.cs</LastGenOutput>
-    </None>
     <None Include="Patterns.nuspec" />
   </ItemGroup>
   <ItemGroup>

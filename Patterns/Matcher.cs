@@ -113,14 +113,24 @@ namespace Patterns
     /// <typeparam name="TOut">Return type</typeparam>
     public class Matcher <TIn, TOut> : IEnumerable<TOut>
     {
-        private readonly List<BlockExpression> _caseExpressionsList = new List<BlockExpression>();
+        /// <summary>
+        /// List of case expressions
+        /// </summary>
+        protected readonly List<BlockExpression> CaseExpressionsList = new List<BlockExpression>();
 
         private ParameterExpression _parameter;
-        private ParameterExpression Parameter => _parameter ?? (_parameter = Expression.Parameter(typeof (TIn), "inputValue"));
+
+        /// <summary>
+        /// Expression representing matching parameter
+        /// </summary>
+        protected ParameterExpression Parameter => _parameter ?? (_parameter = Expression.Parameter(typeof (TIn), "inputValue"));
 
         private LabelTarget _retPoint;
 
-        private LabelTarget RetPoint => _retPoint ?? (_retPoint = Expression.Label(typeof (TOut)));
+        /// <summary>
+        /// Expression representing return point
+        /// </summary>
+        protected LabelTarget RetPoint => _retPoint ?? (_retPoint = Expression.Label(typeof (TOut)));
 
         /// <summary>
         /// Adds context-based matching case
@@ -136,7 +146,7 @@ namespace Patterns
                     Expression.NotEqual(Expression.Convert(bindResult, typeof(object)), Expression.Constant(null)),
                     Expression.Return(RetPoint, Expression.Invoke(processor, bindResult))
                 ));
-            _caseExpressionsList.Add(caseExpr);
+            CaseExpressionsList.Add(caseExpr);
         }
 
         /// <summary>
@@ -148,7 +158,7 @@ namespace Patterns
                         Expression.Invoke(condition, Parameter),
                         Expression.Return(RetPoint, Expression.Invoke(processor, Parameter))
                         ));
-            _caseExpressionsList.Add(caseExpr);
+            CaseExpressionsList.Add(caseExpr);
         }
 
         private Func<TIn, TOut> CompileMatcher()
@@ -159,7 +169,7 @@ namespace Patterns
                 Expression.Label(RetPoint, Expression.Default(typeof(TOut)))
             };
 
-            var matcherExpression = Expression.Block(_caseExpressionsList.Concat(finalExpressions));
+            var matcherExpression = Expression.Block(CaseExpressionsList.Concat(finalExpressions));
 
             var lambda = Expression.Lambda<Func<TIn, TOut>>(matcherExpression, Parameter);
             var matcher = lambda.Compile();
