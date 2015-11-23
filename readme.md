@@ -101,7 +101,7 @@ Matching with Regexes:
 ----------------------
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var match = new Matcher<Union<string, StringBuilder>, string>
+var match = new Matcher<string, string>
 {
     {Case.Rx(new Regex("\\d{2}")), s => s},
     {Case.Rx(new Regex("test\\s(\\d{3})")), s => s}
