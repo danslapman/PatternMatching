@@ -33,5 +33,21 @@ namespace Patterns.Containers.Union
         {
             return Value.GetHashCode();
         }
+
+        /// <summary>
+        /// Checks equality of `Union` instances
+        /// </summary>
+        public static bool operator ==(Union left, Union right)
+        {
+            return !ReferenceEquals(left, null) && left.Equals(right);
+        }
+
+        /// <summary>
+        /// Checks inequality of `Union` instances
+        /// </summary>
+        public static bool operator !=(Union left, Union right)
+        {
+            return !(left == right);
+        }
     }
 }
