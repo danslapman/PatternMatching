@@ -1,5 +1,4 @@
-﻿using Patterns.Containers.Union;
-using System;
+﻿using System;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 
@@ -40,15 +39,6 @@ namespace Patterns
                 Expression.Label(retPoint, Expression.Default(typeof(string)))
                 );
             return Expression.Lambda<Func<string, string>>(block, parameterExpression);
-        }
-
-        /// <summary>
-        /// Creates case that matches union case by type
-        /// </summary>
-        public static Expression<Func<Union, T>> OfType<T>()
-            where T : class
-        {
-            return u => u.Value as T;
         }
     }
 }

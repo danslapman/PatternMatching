@@ -30,22 +30,8 @@
             /// <param name="other">An object to compare with this object.</param>
             public bool Equals(UnionCase<T5> other)
             {
-                return Value.Equals((other as Union).Value);
-            }
-
-            /// <summary>Determines whether the specified object is equal to the current object.</summary>
-            /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
-            /// <param name="obj">The object to compare with the current object. </param>
-            public override bool Equals(object obj)
-            {
-                return Equals(obj as UnionCase<T5>) ? true : Equals(this, obj);
-            }
-
-            /// <summary>Serves as the default hash function. </summary>
-            /// <returns>A hash code for the current object.</returns>
-            public override int GetHashCode()
-            {
-                return Value.GetHashCode();
+                if (other == null) return false;
+                return Equals(other as Union);
             }
         }
 

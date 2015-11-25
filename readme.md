@@ -69,8 +69,8 @@ Union<..> matching:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var match = new UnionMatcher<Union<string, StringBuilder>, string>
 {
-    {Case.OfType<string>(), s => s},
-    {Case.OfType<StringBuilder>(), sb => sb.ToString()}
+    {UnionCase._<string>(), s => s},
+    {UnionCase._<StringBuilder>(), sb => sb.ToString()}
 }.ToFunc();
 
 match("string"); // string

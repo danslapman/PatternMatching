@@ -67,8 +67,8 @@ namespace Patterns.Tests
         {
             var match = new UnionMatcher<Union<string, StringBuilder>, string>
             {
-                {Case.OfType<string>(), s => s},
-                {Case.OfType<StringBuilder>(), sb => sb.ToString()}
+                {UnionCase._<string>(), s => s},
+                {UnionCase._<StringBuilder>(), sb => sb.ToString()}
             }.ToFunc();
 
             Assert.Equal("string", match("string"));
