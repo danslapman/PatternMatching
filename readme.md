@@ -9,7 +9,7 @@ New in 3.0:
 -----------
 - Complete redesign of Union<..> type (more type-safe)
  
-Breaking changes agains 2.* branch:
+Breaking changes against 2.* branch:
 -----------------------------------
 - Unions must be matched with UnionMatcher
 - There is no more other way to extract value from Union<..> but pattern matching
