@@ -14,7 +14,7 @@ namespace Patterns.Containers.Union
         /// <param name="other">An object to compare with this object.</param>
         public bool Equals(Union other)
         {
-            if (other == null) return false;
+            if (ReferenceEquals(other, null)) return false;
             return Value.Equals(other.Value);
         }
 
@@ -23,7 +23,7 @@ namespace Patterns.Containers.Union
         /// <param name="obj">The object to compare with the current object. </param>
         public override bool Equals(object obj)
         {
-            if (obj == null) return false;
+            if (ReferenceEquals(obj, null)) return false;
             return Equals(obj as Union);
         }
 
