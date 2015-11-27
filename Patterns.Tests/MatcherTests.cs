@@ -60,32 +60,20 @@ namespace Patterns.Tests
             Assert.Equal("Unknown object", match(100500));
         }
 
+        
         [Fact]
-        public void UnionMatch1()
+        public void UnionMatch()
         {
-            var match = new Matcher<Union<string, StringBuilder>, string>
+            var match = new UnionMatcher<Union<string, StringBuilder>, string>
             {
-                {u => u.Value1, s => s},
-                {u => u.Value2, sb => sb.ToString()}
+                {UnionCase._<string>(), s => s},
+                {UnionCase._<StringBuilder>(), sb => sb.ToString()}
             }.ToFunc();
 
             Assert.Equal("string", match("string"));
             Assert.Equal(new StringBuilder("string builder").ToString(), match(new StringBuilder("string builder")));
         }
-
-        [Fact]
-        public void UnionMatch2()
-        {
-            var match = new Matcher<Union<string, StringBuilder>, string>
-            {
-                {u => (string)u, s => s},
-                {u => (StringBuilder)u, sb => sb.ToString()}
-            }.ToFunc();
-
-            Assert.Equal("string", match("string"));
-            Assert.Equal(new StringBuilder("string builder").ToString(), match(new StringBuilder("string builder")));
-        }
-
+        
         [Fact]
         public void RegexCaseMatch()
         {

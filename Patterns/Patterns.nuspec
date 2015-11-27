@@ -6,11 +6,10 @@
     <title>Pattern matching</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>http://www.wtfpl.net/txt/copying/</licenseUrl>
     <projectUrl>https://bitbucket.org/danslapman/patterns</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Equality members for the Result&lt;&gt; type</releaseNotes>
+    <releaseNotes>Complete redesign of Union type</releaseNotes>
     <copyright></copyright>
     <tags>csharp patternmatching patterns</tags>
   </metadata>

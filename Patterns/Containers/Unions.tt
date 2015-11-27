@@ -1,0 +1,50 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ output extension=".cs" #>
+namespace Patterns.Containers
+{
+<#for (int i = 2; i < 16; i++){#>
+	<# var typeSig = string.Join(", ", Enumerable.Range(1, i).Select(n => "T" + n)); #>
+/// <summary>
+/// Represents union of <#=i#> types
+/// </summary>
+public abstract class Union<<#=typeSig#>>: Union
+	{
+	<#for (int j = 1; j <= i; j++){#>
+		/// <summary>
+        /// Represents case of union
+        /// </summary>
+        public sealed class Case<#=j#> : Union<<#=typeSig#>>, UnionCase<T<#=j#>>
+        {
+            internal override object Value { get; }
+             
+            /// <summary>
+            /// Initializes case instance
+            /// </summary>
+            public Case<#=j#>(T<#=j#> value)
+            {
+                Value = value;
+            }
+
+            /// <summary>Indicates whether the current object is equal to another object of the same type.</summary>
+            /// <returns>true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.</returns>
+            /// <param name="other">An object to compare with this object.</param>
+            public bool Equals(UnionCase<T<#=j#>> other)
+            {
+                if (other == null) return false;
+                return Equals(other as Union);
+            }
+        }
+
+		/// <summary>
+        /// Converts T<#=j#> instance into Union instance
+        /// </summary>
+        public static implicit operator Union<<#=typeSig#>>(T<#=j#> value)
+        {
+            return new Case<#=j#>(value);
+        }
+	<#}#>
+	}
+<#}#>
+}
