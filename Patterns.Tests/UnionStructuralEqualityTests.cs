@@ -19,6 +19,8 @@ namespace Patterns.Tests
             Union<Item, DataUnit> union2 = new Union<Item, DataUnit>.Case1(new Item(42));
             Assert.True(union1.Equals(union2));
             Assert.True(union2.Equals(union1));
+            Assert.True(union1 == union2);
+            Assert.True(union2 == union1);
         }
 
         [Fact]
@@ -28,6 +30,8 @@ namespace Patterns.Tests
             Union<Item, DataUnit> union2 = new Union<Item, DataUnit>.Case2(new DataUnit(42));
             Assert.False(union1.Equals(union2));
             Assert.False(union2.Equals(union1));
+            Assert.True(union1 != union2);
+            Assert.True(union2 != union1);
         }
     }
 }
