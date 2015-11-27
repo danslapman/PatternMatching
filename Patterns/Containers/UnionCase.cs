@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Patterns.Containers.Union
+namespace Patterns.Containers
 {
     /// <summary>
     /// Represents typed union case

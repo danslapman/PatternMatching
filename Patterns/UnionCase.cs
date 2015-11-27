@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Patterns.Containers.Union;
+using Patterns.Containers;
 
 namespace Patterns
 {

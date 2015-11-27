@@ -2,7 +2,6 @@
 using System.Text.RegularExpressions;
 using Patterns.Containers;
 using Xunit;
-using Patterns.Containers.Union;
 
 namespace Patterns.Tests
 {

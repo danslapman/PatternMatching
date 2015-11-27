@@ -1,4 +1,4 @@
-﻿using Patterns.Containers.Union;
+﻿using Patterns.Containers;
 using Xunit;
 
 namespace Patterns.Tests

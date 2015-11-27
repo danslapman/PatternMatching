@@ -41,17 +41,13 @@
     <Compile Include="Case.cs" />
     <Compile Include="Containers\OptionType.cs" />
     <Compile Include="Containers\Result.cs" />
-    <Compile Include="Containers\Union\UnionCase.cs" />
-    <Compile Include="Containers\Union\Union.cs" />
-    <Compile Include="Containers\Union\Union`10.cs" />
-    <Compile Include="Containers\Union\Union`2.cs" />
-    <Compile Include="Containers\Union\Union`3.cs" />
-    <Compile Include="Containers\Union\Union`4.cs" />
-    <Compile Include="Containers\Union\Union`5.cs" />
-    <Compile Include="Containers\Union\Union`6.cs" />
-    <Compile Include="Containers\Union\Union`7.cs" />
-    <Compile Include="Containers\Union\Union`8.cs" />
-    <Compile Include="Containers\Union\Union`9.cs" />
+    <Compile Include="Containers\UnionCase.cs" />
+    <Compile Include="Containers\Union.cs" />
+    <Compile Include="Containers\Unions.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Unions.tt</DependentUpon>
+    </Compile>
     <Compile Include="Extensions.cs" />
     <Compile Include="Matcher.cs" />
     <Compile Include="MatchException.cs" />
@@ -66,6 +62,13 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Containers\Unions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Unions.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
