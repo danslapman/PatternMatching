@@ -6,7 +6,7 @@
     <title>Pattern matching</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <projectUrl>https://bitbucket.org/danslapman/patterns</projectUrl>
+    <projectUrl>https://github.com/danslapman/PatternMatching</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Complete redesign of Union type</releaseNotes>
