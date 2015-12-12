@@ -105,6 +105,20 @@ namespace Patterns.Containers
         /// </summary>
         /// <param name="func">function</param>
         public abstract Option<TR> FlatMap<TR>(Func<T, Option<TR>> func);
+
+        /// <summary>
+        /// Converts current Option&lt;&gt; instance into Result instance
+        /// </summary>
+        public abstract Result<Some<T>, None<T>> ToResult();
+
+        /// <summary>
+        /// Converts current Option&lt;&gt; instance into Result instance
+        /// </summary>
+        /// <typeparam name="TSucc">Success type</typeparam>
+        /// <typeparam name="TErr">Error type</typeparam>
+        /// <param name="fs">Function to map on `Some` value</param>
+        /// <param name="fn">Function that emits `TErr`</param>
+        public abstract Result<TSucc, TErr> ToResult<TSucc, TErr>(Func<T, TSucc> fs, Func<TErr> fn);
     }
 
     /// <summary>
@@ -183,6 +197,26 @@ namespace Patterns.Containers
         {
             return $"Some({Value})";
         }
+
+        /// <summary>
+        /// Converts current Option&lt;&gt; instance into Result instance
+        /// </summary>
+        public override Result<Some<T>, None<T>> ToResult()
+        {
+            return this;
+        }
+
+        /// <summary>
+        /// Converts current Option&lt;&gt; instance into Result instance
+        /// </summary>
+        /// <typeparam name="TSucc">Success type</typeparam>
+        /// <typeparam name="TErr">Error type</typeparam>
+        /// <param name="fs">Function to map on `Some` value</param>
+        /// <param name="fn">Function that emits `TErr`</param>
+        public override Result<TSucc, TErr> ToResult<TSucc, TErr>(Func<T, TSucc> fs, Func<TErr> fn)
+        {
+            return new Success<TSucc, TErr>(fs(Value));
+        }
     }
 
     /// <summary>
@@ -252,6 +286,26 @@ namespace Patterns.Containers
         public override string ToString()
         {
             return "None";
+        }
+
+        /// <summary>
+        /// Converts current Option&lt;&gt; instance into Result instance
+        /// </summary>
+        public override Result<Some<T>, None<T>> ToResult()
+        {
+            return this;
+        }
+
+        /// <summary>
+        /// Converts current Option&lt;&gt; instance into Result instance
+        /// </summary>
+        /// <typeparam name="TSucc">Success type</typeparam>
+        /// <typeparam name="TErr">Error type</typeparam>
+        /// <param name="fs">Function to map on `Some` value</param>
+        /// <param name="fn">Function that emits `TErr`</param>
+        public override Result<TSucc, TErr> ToResult<TSucc, TErr>(Func<T, TSucc> fs, Func<TErr> fn)
+        {
+            return new Failure<TSucc, TErr>(fn());
         }
     }
 

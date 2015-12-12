@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/danslapman/PatternMatching</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Complete redesign of Union type</releaseNotes>
+    <releaseNotes>Option&lt;&gt; to Result&lt;&gt; conversion functions</releaseNotes>
     <copyright></copyright>
     <tags>csharp patternmatching patterns</tags>
   </metadata>
