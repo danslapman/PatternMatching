@@ -99,7 +99,7 @@ namespace Patterns
         /// </summary>
         public Action<T> ToAction()
         {
-            return Match;
+            return MatcherFunc;
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Patterns
         /// </summary>
         public Func<TIn, TOut> ToFunc()
         {
-            return Match;
+            return MatcherFunc;
         }
 
         /// <summary>
