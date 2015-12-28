@@ -1,4 +1,4 @@
-C# Pattern Matching 3.0
+C# Pattern Matching 3.2
 =======================
 
 This is second a try to implement pattern matching in C# as-idiomatic-as-possible. The

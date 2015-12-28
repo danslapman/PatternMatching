@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/danslapman/PatternMatching</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Option&lt;&gt; to Result&lt;&gt; conversion functions</releaseNotes>
+    <releaseNotes>ToAction()/ToFunc() return MatcherFunc directly instead of creating wrapping delegate</releaseNotes>
     <copyright></copyright>
     <tags>csharp patternmatching patterns</tags>
   </metadata>
