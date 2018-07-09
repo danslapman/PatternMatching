@@ -41,7 +41,7 @@ namespace Patterns.Tests
                 {i => i as Some<int>, i => i.Value},
             }.ToFunc();
 
-            Assert.Equal(null, match(new None<int>()));
+            Assert.Null(match(new None<int>()));
             Assert.Equal(10, match(new Some<int>(10)));
         }
 
