@@ -1,9 +1,12 @@
-C# Pattern Matching 3.2
+C# Pattern Matching 3.3
 =======================
 
 This is second a try to implement pattern matching in C# as-idiomatic-as-possible. The
 idea was to avoid fluent matcher building and to provide a simple and clear
 syntax.
+
+New in 3.3:
+.NETStandard2.0 Support
 
 New in 3.0:
 -----------
